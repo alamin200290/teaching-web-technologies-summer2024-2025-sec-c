@@ -1,0 +1,20 @@
+<?php
+    session_start();
+    $username = trim($_REQUEST['username']);
+    $password = trim($_REQUEST['password']);
+
+    if($username == "" || $password == ""){
+        echo "please type username/password first!";
+    }else{
+        if($username == $password){
+            //echo "valid user!";
+            $_SESSION['status'] = true; 
+            $_SESSION['username'] = $username; 
+            header('location: home.php');
+            //echo "<a href='home.php'>Go Home </a>";
+        }else{
+            header('location: login.php?error=invalid_user');
+        }
+    }
+
+?>
