@@ -15,6 +15,7 @@
 </head>
 <body>
         <h1>welcome home! <?=$_SESSION['username']?></h1> 
+        <a href='allUser.php'>List of Users </a> | 
         <a href='../controller/logout.php'>logout </a>
 </body>
 </html>
